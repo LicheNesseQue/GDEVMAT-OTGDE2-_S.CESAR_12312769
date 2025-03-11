@@ -15,12 +15,12 @@ void draw()
  
  /*
  these are old code 
- //circle(0, 0, 30);
- //strokeWeight(4);
- //color white = color (255, 255, 255);
- //fill(white);
- //stroke(white);
- //line(-75, -75, 75, 75);
+ circle(0, 0, 30);
+ strokeWeight(4);
+ color white = color (255, 255, 255);
+ fill(white);
+ stroke(white);
+ line(-75, -75, 75, 75);
   */
  
 cartesianPlaneGenerator();
@@ -31,7 +31,7 @@ sineWaveBaby();
 
 void cartesianPlaneGenerator()
 {
-strokeWeight(1);
+ strokeWeight(1);
  
  color white = color (255, 255, 255);
  fill(white);
@@ -82,7 +82,20 @@ float angleSmoothness = 0.1;
 float amplitude = 100;
 float frequency = 0.2;
 float waveSpeed = 1;
+float currentWaveSpeed = waveSpeed;
 
+void keyPressed()
+{
+  if (keyCode == RIGHT)
+  {
+    currentWaveSpeed += 0.5;
+    waveSpeed = currentWaveSpeed;
+  } else if (keyCode == LEFT)
+  { 
+  currentWaveSpeed -= 0.5;
+   waveSpeed = currentWaveSpeed;
+  }
+}
 
 void sineWaveBaby()
 {
@@ -91,20 +104,12 @@ void sineWaveBaby()
   noStroke();
   
   float tempAngle = angle;
-  float currentWaveSpeed = waveSpeed;
   
-  for (float x = 0; x < width; x +=10) {
+  for (float x = 0; x < width; x +=10) 
+  {
     float y = sin(tempAngle) * amplitude;
     circle(x, y, 10);
     tempAngle += angleSmoothness;
   }
-  angle -= currentWaveSpeed * frequency;
-  
-  if (keyCode == RIGHT){
-    currentWaveSpeed += 0.5;
-    waveSpeed = currentWaveSpeed;
-  } else if (keyCode == LEFT){ 
-  currentWaveSpeed -= 0.5;
-   waveSpeed = currentWaveSpeed;
-  }
+  angle -= currentWaveSpeed * frequency; 
 }
