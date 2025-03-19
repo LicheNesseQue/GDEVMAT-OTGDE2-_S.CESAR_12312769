@@ -45,7 +45,7 @@ class Walker {
   
    void randomWalk()
   {
-     if (millis() - startTime > 3000) { // Stop after 300 seconds (300000 ms)
+     if (millis() - startTime > 5000) { // Stop after 300 seconds (300000 ms)
         return;
     }
     int rng = int(random(8));
@@ -86,7 +86,7 @@ class Walker {
   void randomWalkBiased()
     {
        
-      if (millis() - startTime > 3000) { // Stop after 300 seconds (300000 ms)
+      if (millis() - startTime > 5000) { // Stop after 300 seconds (300000 ms)
         return;
     }
        int rng = int(random(10)); 
