@@ -2,9 +2,9 @@ public class Walker{
 //  PVector position = new PVector();
  // public float scale = 15;
  PVector pos = new PVector();
+
+
 void render(){
-   
-   
   int randomValue1 = int(random(720));
   float gaussian1 = randomGaussian();
   

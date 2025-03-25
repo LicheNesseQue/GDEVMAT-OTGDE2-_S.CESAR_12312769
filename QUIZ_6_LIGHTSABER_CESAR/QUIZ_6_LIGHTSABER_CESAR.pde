@@ -4,11 +4,11 @@ void setup(){
   size(1080, 720, P3D);
   camera(0 , 0, Window.eyeZ, 0, 0, 0, 0, -1, 0);
  
-  //for(int i = 0; i < arrayWalker.length; i++)
-  //{
-    //arrayWalker[i] = new Walker();
-    //arrayWalker[i].pos = new PVector(random(-540,540), random(-360,360));
-  //}
+  for(int i = 0; i < arrayWalker.length; i++)
+  {
+  arrayWalker[i] = new Walker();
+  arrayWalker[i].pos = new PVector(random(-540,540), random(-360,360));
+  }
 }
 
 
@@ -41,10 +41,11 @@ void draw(){
   {
   myWalker.render();
   }*/
-  //for(Walker circleEach: arrayWalker)
-  //{
-    //circleEach.newRender();
-  //}
+  //
+  for(Walker circleEach: arrayWalker)
+  {
+    circleEach.newRender();
+  }
   
   float angle = atan2(mouse.y, mouse.x);
   strokeWeight(20);
