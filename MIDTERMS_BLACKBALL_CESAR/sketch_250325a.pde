@@ -18,8 +18,7 @@ void draw(){
   background(0);
   fill(255);
   circle(blackHole.x, blackHole.y, blackHoleRadius * 2); 
-  fill(50);
-  circle(blackHole.x, blackHole.y, blackHoleRadius);
+  
   for(int i = 0; i < arrayParticles.length; i++)
   { 
     arrayParticles[i].Update();  
@@ -27,16 +26,15 @@ void draw(){
   for(Particle particlesLoop: arrayParticles)
   {
     particlesLoop.Render();
-  }
-  
-
-   
     
-  if (millis() - startTime > 3000){
+  }
+    
+  if (millis() - startTime > 2000){
     WhiteHoleSimulation();
     startTime = millis();
   }
-   
+  
+  teleportParticleToNowhere();
 }
 
 
@@ -52,4 +50,11 @@ void WhiteHoleSimulation(){
       
 }
 
+void teleportParticleToNowhere() {
+  for (int i = 0; i < arrayParticles.length; i++) {
+    if (PVector.dist(arrayParticles[i].position, blackHole) < blackHoleRadius) {
+      arrayParticles[i].position.set(-120000, -120000);
+    }
+  }
+}
       

@@ -1,7 +1,6 @@
 public class Particle {
-
+  
   //AT THIS POINT JUST MAKE IT INTO A CONSTRUCTOR WTF (Update: Idk how)
-
   PVector position = new PVector();
   PVector velocity = new PVector(0,0);
   float scale;
@@ -25,10 +24,9 @@ public class Particle {
   }
 
 
-  // [testing code UNUSED]
-  public void draw() {
-    fill(col);
-
-    circle(position.x, position.y, scale);
-  }
+  // testing code
+  //public void draw() {
+    //fill(col);
+   // circle(position.x, position.y, scale);
+ // }
 }
